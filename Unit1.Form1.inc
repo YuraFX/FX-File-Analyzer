@@ -29,6 +29,8 @@ procedure InitializeComponent;
         self.lblName := new System.Windows.Forms.Label();
         self.lblSize := new System.Windows.Forms.Label();
         self.lblHash := new System.Windows.Forms.Label();
+        self.lblNameEng := new System.Windows.Forms.Label();
+        self.lblSizeEng := new System.Windows.Forms.Label();
         self.menuStrip1.SuspendLayout();
         (System.ComponentModel.ISupportInitialize(self.Block2)).BeginInit();
         (System.ComponentModel.ISupportInitialize(self.pictureBox1)).BeginInit();
@@ -290,7 +292,7 @@ procedure InitializeComponent;
         // 
         self.lblSize.Font := new System.Drawing.Font('Microsoft Sans Serif', 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
         self.lblSize.ForeColor := System.Drawing.Color.White;
-        self.lblSize.Location := new System.Drawing.Point(121, 168);
+        self.lblSize.Location := new System.Drawing.Point(119, 168);
         self.lblSize.Name := 'lblSize';
         self.lblSize.Size := new System.Drawing.Size(369, 23);
         self.lblSize.TabIndex := 18;
@@ -306,16 +308,37 @@ procedure InitializeComponent;
         self.lblHash.TabIndex := 19;
         self.lblHash.TextAlign := System.Drawing.ContentAlignment.MiddleLeft;
         // 
+        // lblNameEng
+        // 
+        self.lblNameEng.Font := new System.Drawing.Font('Microsoft Sans Serif', 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
+        self.lblNameEng.ForeColor := System.Drawing.Color.White;
+        self.lblNameEng.Location := new System.Drawing.Point(92, 147);
+        self.lblNameEng.Name := 'lblNameEng';
+        self.lblNameEng.Size := new System.Drawing.Size(398, 23);
+        self.lblNameEng.TabIndex := 20;
+        self.lblNameEng.TextAlign := System.Drawing.ContentAlignment.MiddleLeft;
+        self.lblNameEng.Visible := false;
+        // 
+        // lblSizeEng
+        // 
+        self.lblSizeEng.Font := new System.Drawing.Font('Microsoft Sans Serif', 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
+        self.lblSizeEng.ForeColor := System.Drawing.Color.White;
+        self.lblSizeEng.Location := new System.Drawing.Point(72, 168);
+        self.lblSizeEng.Name := 'lblSizeEng';
+        self.lblSizeEng.Size := new System.Drawing.Size(416, 23);
+        self.lblSizeEng.TabIndex := 21;
+        self.lblSizeEng.TextAlign := System.Drawing.ContentAlignment.MiddleLeft;
+        self.lblSizeEng.Visible := false;
+        // 
         // Form1
         // 
         self.AutoSizeMode := System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         self.BackColor := System.Drawing.Color.DarkGray;
         self.ClientSize := new System.Drawing.Size(506, 279);
+        self.Controls.Add(self.lblNameEng);
         self.Controls.Add(self.lblHash);
-        self.Controls.Add(self.lblSize);
         self.Controls.Add(self.lblName);
         self.Controls.Add(self.lblMD5);
-        self.Controls.Add(self.lblFileSize);
         self.Controls.Add(self.pb2);
         self.Controls.Add(self.pb1);
         self.Controls.Add(self.button1);
@@ -329,6 +352,9 @@ procedure InitializeComponent;
         self.Controls.Add(self.Logo1);
         self.Controls.Add(self.label1);
         self.Controls.Add(self.Block1);
+        self.Controls.Add(self.lblSizeEng);
+        self.Controls.Add(self.lblSize);
+        self.Controls.Add(self.lblFileSize);
         self.Icon := (System.Drawing.Icon(resources.GetObject('$this.Icon')));
         self.MainMenuStrip := self.menuStrip1;
         self.MaximizeBox := false;

@@ -55,6 +55,8 @@ type
     lblName: &Label;
     lblSize: &Label;
     lblHash: &Label;
+    lblNameEng: &Label;
+    lblSizeEng: &Label;
     toolStripMenuItem5: ToolStripMenuItem;
     {$include Unit1.Form1.inc}
   {$endregion FormDesigner}
@@ -77,14 +79,16 @@ end;
 procedure Form1.toolStripMenuItem3_Click(sender: Object; e: EventArgs); // Нажатие на кнопку "Открыть...".
 begin
   var fio:=new FileInfo(OpenFileDialog1.FileName);                    // 
-  OpenFileDialog1.ShowDialog;                                         // Появление окна открывания файла и 
-  tbFile.Text:=OpenFileDialog1.FileName;                              // копирование на Text Box путь, 
-  lblHash.Text:=GetMD5FromFile(OpenFileDialog1.FileName);             // хэш-сумму открываемого файла, а также 
-  lblName.Text:=OpenFileDialog1.SafeFileName;                         // имя и размер файла.
-  lblSize.Text:=fio.Length.ToString();                                //
+  OpenFileDialog1.ShowDialog;                                         //
+  tbFile.Text:=OpenFileDialog1.FileName;                              // Появление окна открывания файла и 
+  lblHash.Text:=GetMD5FromFile(OpenFileDialog1.FileName);             // копирование на TextBox путь, 
+  lblName.Text:=OpenFileDialog1.SafeFileName;                         // хэш-сумму открываемого файла, а также 
+  lblSize.Text:=fio.Length.ToString();                                // имя и размер файла.
+  lblNameEng.Text:=OpenFileDialog1.SafeFileName;                      //
+  lblSizeEng.Text:=fio.Length.ToString();                             //
   //////////////////////////////////////////////////////////////////////
-  Label3.Text:='Результат:';                                          // Текст Label3 = Статус: (Rus язык).
-  Label4.Text:='Result:';                                             // Текст Label4 = Status: (Eng язык).
+  Label3.Text:='Результат:';                                          // Текст Label3 = Результат: (Rus язык).
+  Label4.Text:='Result:';                                             // Текст Label4 = Result: (Eng язык).
   Label3.ForeColor:=System.Drawing.Color.White;                       // Цвет Label3 = Белый (Rus язык).
   Label4.ForeColor:=System.Drawing.Color.White;                       // Цвет Label4 = Белый (Eng язык).
   //////////////////////////////////////////////////////////////////////
@@ -98,7 +102,7 @@ begin
   else                                                                // его текст = 'File'.
     pb1.Visible:=false;                                               //
   //////////////////////////////////////////////////////////////////////
-  if lblName.Text='Файл' then                                        //
+  if lblName.Text='Файл' then                                         //
     lblName.Text:=''                                                  // Очистка lblName при условии, если
   else                                                                // его текст = 'Файл'.
     pb1.Visible:=false;                                               //
@@ -108,14 +112,24 @@ begin
   else                                                                // его текст = 'File'.
     pb1.Visible:=false;                                               //
   //////////////////////////////////////////////////////////////////////
-  if lblSize.Text='134' then                                          //
-    lblSize.Text:=''                                                  // Очистка lblSize при условии, если
+  if lblNameEng.Text='Файл' then                                      //
+    lblNameEng.Text:=''                                               // Очистка lblNameEng при условии, если
   else                                                                // его текст = 'Файл'.
+    pb1.Visible:=false;                                               //
+  //////////////////////////////////////////////////////////////////////
+    if lblNameEng.Text='File' then                                    //
+    lblNameEng.Text:=''                                               // Очистка lblNameEng при условии, если
+  else                                                                // его текст = 'File'.
     pb1.Visible:=false;                                               //
   //////////////////////////////////////////////////////////////////////
   if lblSize.Text='134' then                                          //
     lblSize.Text:=''                                                  // Очистка lblSize при условии, если
-  else                                                                // его текст = 'File'.
+  else                                                                // его текст = '134'.
+    pb1.Visible:=false;                                               //
+  //////////////////////////////////////////////////////////////////////
+  if lblSizeEng.Text='134' then                                       //
+    lblSizeEng.Text:=''                                               // Очистка lblSizeEng при условии, если
+  else                                                                // его текст = '134'.
     pb1.Visible:=false;                                               //
   //////////////////////////////////////////////////////////////////////
   if lblHash.Text='0A-10-EA-9B-DE-30-21-49-6A-42-A5-50-56-6A-7D-4D' then//
@@ -180,6 +194,8 @@ begin
   aboutTheProgramToolStripMenuItem.Visible:=true;  //
   toolStripMenuItem5.Visible:=false;               //
   pb2.Visible:=true;                               //
+  lblNameEng.Visible:=true;                        //
+  lblSizeEng.Visible:=true;                        //
   ///////////////////////////////////////////////////
   toolStripMenuItem1.Text:='File';                 //
   toolStripMenuItem2.Text:='Other';                //
@@ -201,6 +217,8 @@ begin
   aboutTheProgramToolStripMenuItem.Visible:=false; //
   toolStripMenuItem5.Visible:=true;                //
   pb2.Visible:=false;                              //
+  lblNameEng.Visible:=false;                       //
+  lblSizeEng.Visible:=false;                       //
   ///////////////////////////////////////////////////
   toolStripMenuItem1.Text:='Файл';                 //
   toolStripMenuItem2.Text:='Прочее';               //

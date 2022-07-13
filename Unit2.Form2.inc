@@ -11,7 +11,7 @@ procedure InitializeComponent;
         self.label1.Name := 'label1';
         self.label1.Size := new System.Drawing.Size(211, 23);
         self.label1.TabIndex := 0;
-        self.label1.Text := 'FX File Analyzer 1.0';
+        self.label1.Text := 'FX File Analyzer 1.1';
         self.label1.TextAlign := System.Drawing.ContentAlignment.TopCenter;
         // 
         // label2
