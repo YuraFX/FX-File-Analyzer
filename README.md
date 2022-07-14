@@ -6,4 +6,4 @@
 наоборот почти не нагружает вашу систему и позволяет легко проверять любые файлы на наличие в них вирусов.
 
 # Как установить данный продукт?
-* [Скачать](https://github.com/YuraFX/FX-File-Analyzer/releases/tag/Pascal) Windows-версию в релизах.
+* [Скачать](https://github.com/YuraFX/FX-File-Analyzer/releases/tag/PascalABC.NET) Windows-версию в релизах.
